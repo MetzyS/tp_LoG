@@ -1,39 +1,30 @@
+<section id="visite">
+<aside id="categories">
+        <ul >
+            <?php
+            $categoriesControleur = new CategorieControleur();
+            $categories = $categoriesControleur->showAll();
+            foreach ($categories as $categorie) {
+                Components::categorie($categorie);
+            }
+            ?>
+        </ul>
+    </aside>
+</section>
 <?php
-include '../_controleur/JeuxControleur.php';
-include '../_modele/Connexion.php'
-?>
-<!DOCTYPE html>
-<html lang="en">
+$page_categorie = filter_input(INPUT_GET, 'categorie');
+if(!$page_categorie) {
+    $page_categorie = '';
+};
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+$jeuCategorie = $data['categorie'];
+var_dump($jeuCategorie);
+$i = 0;
+foreach($jeuCategorie as $jeu) {
+    echo $jeu[$i]['titre'];
+    $i += 1;
+}
 
-<body>
-    <div>
-        <?php
-
-        // Affiche tout les jeux
-        $jeux = JeuxControleur::showAll();
-        echo '<pre>';
-        foreach ($jeux as $jeu) {
-            echo $jeu['id_jeux'] . ' ' . $jeu['nom_jeux'];
-            echo '<br>';
-        }
-        echo '</pre>';
-
-        // Affiche les jeux de la catégorie 1
-        $jeuxCategorie = JeuxControleur::showCategorie(1);
-        foreach ($jeuxCategorie as $jeu) {
-            echo $jeu['nom_jeux'] . '<br>';
-        }
-
-
-        ?>
-    </div>
-</body>
-
-</html>
+// foreach($data['categorie'][0] as $data) {
+//     echo $data['categorie'][0]['nom_jeux'];
+// }

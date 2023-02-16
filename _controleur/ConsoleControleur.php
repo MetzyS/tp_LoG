@@ -1,11 +1,11 @@
 <?php
 
-require_once('_modele/Categorie.php');
+require_once('_modele/Console.php');
 
-class CategorieControleur extends Categorie
+class ConsoleControleur extends Console
 {
     /**
-     * Permet de récupérer toute la table categorie
+     * Permet de récupérer toute la table console
      */
     public function showAll()
     {

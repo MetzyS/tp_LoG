@@ -1,11 +1,11 @@
 <?php
 
-require_once('_modele/Categorie.php');
+require_once('_modele/LignesCommande.php');
 
-class CategorieControleur extends Categorie
+class LignesCommandeControleur extends LignesCommande
 {
     /**
-     * Permet de récupérer toute la table categorie
+     * Permet de récupérer toute la table lignes_commande
      */
     public function showAll()
     {
@@ -14,4 +14,5 @@ class CategorieControleur extends Categorie
         $resultat = $requete->fetchAll();
         return $resultat;
     }
-};
+
+}

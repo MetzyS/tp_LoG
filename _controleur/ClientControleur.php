@@ -1,12 +1,12 @@
 <?php
 
-class Jeux
-{
-    protected $table = 'jeux';
-    protected $id = 'id_jeux';
-    protected $nom_jeux = 'nom_jeux';
-    protected $categories_id = 'categories_id';
+require_once('_modele/Client.php');
 
+class ClientControleur extends Client
+{
+    /**
+     * Permet de récupérer toute la table categorie
+     */
     public function showAll()
     {
         $sql = "SELECT * FROM $this->table";
@@ -15,13 +15,11 @@ class Jeux
         return $resultat;
     }
 
-    public function showCategorie($id_categorie)
+    public function showClientVille($id_ville)
     {
-        $sql = "SELECT * FROM $this->table WHERE $this->categories_id = $id_categorie";
+        $sql = "SELECT * FROM $this->table WHERE $this->ville = $this->id_ville";
         $requete = Connexion::query($sql);
         $resultat = $requete->fetchAll();
         return $resultat;
     }
 };
-
-

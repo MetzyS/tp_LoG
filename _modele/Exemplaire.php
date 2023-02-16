@@ -2,14 +2,11 @@
 
 class Exemplaire
 {
-    /**
-     * Permet de récupérer toute la table exemplaire
-     */
-    public static function showAll()
-    {
-        $sql = "SELECT * FROM exemplaire";
-        $requete = Connexion::query($sql);
-        $resultat = $requete->fetchAll();
-        return $resultat;
-    }
+    protected $table = 'exemplaires';
+    protected $id = 'id_exemplaires';
+    protected $jeux_id = 'jeux_id';
+    protected $console_id = 'console_id';
+    protected $prix = 'prix';
+    protected $image = 'image';
+    protected $etat = 'etat';
 };

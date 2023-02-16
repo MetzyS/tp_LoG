@@ -2,14 +2,7 @@
 
 class Categorie
 {
-    /**
-     * Permet de récupérer toute la table categorie
-     */
-    public static function showAll()
-    {
-        $sql = "SELECT * FROM categories";
-        $requete = Connexion::query($sql);
-        $resultat = $requete->fetchAll();
-        return $resultat;
-    }
+    protected $table = 'categories';
+    protected $id = 'id_categories';
+    protected $nom_categorie = 'nom_cat';
 };

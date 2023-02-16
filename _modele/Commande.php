@@ -2,14 +2,9 @@
 
 class Commande
 {
-    /**
-     * Permet de récupérer toute la table commande
-     */
-    public static function showAll()
-    {
-        $sql = "SELECT * FROM commande";
-        $requete = Connexion::query($sql);
-        $resultat = $requete->fetchAll();
-        return $resultat;
-    }
+    protected $table = 'commandes';
+    protected $id = 'id_commandes';
+    protected $client = 'client_id';
+    protected $created = 'created_at';
+    protected $updated = 'updated_at';
 };
